@@ -1,0 +1,6 @@
+c:\users\jneu6\documents\visual studio 2013\Projects\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\bin\Debug\neuJohnathanCSConsoleAssignment.exe.config
+C:\Users\jneu6\Documents\Visual Studio 2013\Projects\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\bin\Debug\neuJohnathanCSConsoleAssignment.exe
+C:\Users\jneu6\Documents\Visual Studio 2013\Projects\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\bin\Debug\neuJohnathanCSConsoleAssignment.pdb
+C:\Users\jneu6\Documents\Visual Studio 2013\Projects\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\obj\Debug\neuJohnathanCSConsoleAssignment.exe
+C:\Users\jneu6\Documents\Visual Studio 2013\Projects\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\obj\Debug\neuJohnathanCSConsoleAssignment.pdb
+C:\Users\jneu6\Documents\Visual Studio 2013\Projects\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\obj\Debug\neuJohnathanCSConsoleAssignment.csprojResolveAssemblyReference.cache
