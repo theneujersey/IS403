@@ -4,3 +4,6 @@ C:\Users\jneu6\Documents\Visual Studio 2013\Projects\neuJohnathanCSConsoleAssign
 C:\Users\jneu6\Documents\Visual Studio 2013\Projects\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\obj\Debug\neuJohnathanCSConsoleAssignment.exe
 C:\Users\jneu6\Documents\Visual Studio 2013\Projects\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\obj\Debug\neuJohnathanCSConsoleAssignment.pdb
 C:\Users\jneu6\Documents\Visual Studio 2013\Projects\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\obj\Debug\neuJohnathanCSConsoleAssignment.csprojResolveAssemblyReference.cache
+C:\Users\jneu6\Documents\GitHub\IS403\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\bin\Debug\neuJohnathanCSConsoleAssignment.exe.config
+C:\Users\jneu6\Documents\GitHub\IS403\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\obj\Debug\neuJohnathanCSConsoleAssignment.exe
+C:\Users\jneu6\Documents\GitHub\IS403\neuJohnathanCSConsoleAssignment\neuJohnathanCSConsoleAssignment\obj\Debug\neuJohnathanCSConsoleAssignment.pdb

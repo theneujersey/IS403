@@ -128,15 +128,14 @@ namespace Neu__Johnathan_CS_Console_Assignment
                 while (bException2 == false)
                 {
                     try{
-                        bException2 = true;
                         sUserInput = Console.ReadLine();
                         iPoints = Convert.ToInt32(sUserInput);
+                        bException2 = true;
                         Console.WriteLine();
                     }
                     catch{                     
                         Console.WriteLine("Please enter an integer.");
                         Console.Write("Enter " + teamName + "'s points: ");
-                        bException2 = false;
                     }
                 }
                 Console.WriteLine();

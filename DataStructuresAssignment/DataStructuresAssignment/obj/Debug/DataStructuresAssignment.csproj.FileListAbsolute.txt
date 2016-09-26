@@ -4,3 +4,6 @@ c:\users\jneu6\documents\visual studio 2013\Projects\DataStructuresAssignment\Da
 c:\users\jneu6\documents\visual studio 2013\Projects\DataStructuresAssignment\DataStructuresAssignment\obj\Debug\DataStructuresAssignment.csprojResolveAssemblyReference.cache
 c:\users\jneu6\documents\visual studio 2013\Projects\DataStructuresAssignment\DataStructuresAssignment\obj\Debug\DataStructuresAssignment.exe
 c:\users\jneu6\documents\visual studio 2013\Projects\DataStructuresAssignment\DataStructuresAssignment\obj\Debug\DataStructuresAssignment.pdb
+C:\Users\jneu6\Documents\GitHub\IS403\DataStructuresAssignment\DataStructuresAssignment\bin\Debug\DataStructuresAssignment.exe.config
+C:\Users\jneu6\Documents\GitHub\IS403\DataStructuresAssignment\DataStructuresAssignment\obj\Debug\DataStructuresAssignment.exe
+C:\Users\jneu6\Documents\GitHub\IS403\DataStructuresAssignment\DataStructuresAssignment\obj\Debug\DataStructuresAssignment.pdb
