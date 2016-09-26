@@ -10,7 +10,13 @@ namespace DataStructuresAssignment
     {
         static void Main(string[] args)
         {
+            //create stopwatch called sw
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             int iAnswer = 0;
+            int userInput = 0;
+            Boolean bError = false;
+            Boolean bStop = false;
+            
             do {
                 Console.WriteLine("Please enter an integer 1-4.");
                 Console.WriteLine("1. Stack\n2. Queue\n3. Dictionary\n4. Exit");
@@ -36,9 +42,7 @@ namespace DataStructuresAssignment
                     //9/27/16
                     //create stack and instantiate variables
                     Stack<string> myStack = new Stack<string>();
-                    int userInput = 0;
-                    Boolean bError = false;
-                    Boolean bStop = false;
+                    
 
                     //dowhile loop to until user enters 7 to return to main menu
                     do
@@ -199,8 +203,7 @@ namespace DataStructuresAssignment
                                 myStack.Clear();
                                 break;
                             case 6: //search
-                                //create stopwatch called sw
-                                System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+                                
 
                                 //ask what user want to search for
                                 Console.Write("What do you want to search for?: ");
@@ -242,7 +245,7 @@ namespace DataStructuresAssignment
                     Console.WriteLine("Queue");
                         //Wooseok Lee, 2-1, create Queue menu.
                         Queue<string> myQueue = new Queue<string>();
-                        System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+              
                         int menuChoice = 0; bool inputError; string deleteInput;
                         string searchInput; bool returnMainMenu; bool bDelete; string firstItem;
 
