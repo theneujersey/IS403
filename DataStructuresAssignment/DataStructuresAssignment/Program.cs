@@ -108,7 +108,11 @@ namespace DataStructuresAssignment
                                     for (int iCount = 0; iCount < 2000; iCount++)
                                     {
                                         myStack.Push("New Entry " + (iCount + 1));
-                                    }
+                                    }                                    
+                                    
+                                    //tell the user it worked
+                                    Console.WriteLine("\nThe huge list was added!");
+
                                     break;
                                 case 3:  //display
                                     //reset bError to false
@@ -213,6 +217,10 @@ namespace DataStructuresAssignment
                                 case 5: //clear
                                     //clear myStack
                                     myStack.Clear();
+                                    
+                                    //tell user it worked
+                                    Console.WriteLine("\nThe stack was cleared!");
+                           
                                     break;
                                 case 6: //search
 
@@ -252,7 +260,7 @@ namespace DataStructuresAssignment
                                     }
                                     else
                                     {
-                                        Console.WriteLine("There are" + myStack.Count() + " items in the stack");
+                                        Console.WriteLine("There are " + myStack.Count() + " items in the stack");
                                     }
 
                                     break;
