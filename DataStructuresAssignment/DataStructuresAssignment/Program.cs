@@ -245,7 +245,7 @@ namespace DataStructuresAssignment
                                 }
                                 else
                                 {
-                                    Console.WriteLine("There are" + myStack.Count() + " items in the stack");
+                                    Console.WriteLine("There are " + myStack.Count() + " items in the stack");
                                 }
                                 
                                 break;
@@ -277,7 +277,8 @@ namespace DataStructuresAssignment
                             Console.WriteLine("4. Delete from Queue");
                             Console.WriteLine("5. Clear Queue");
                             Console.WriteLine("6. Search Queue");
-                            Console.WriteLine("7. Return to Main Menu");
+                            Console.WriteLine("7. Count Items in Queue");
+                            Console.WriteLine("8. Return to Main Menu");
 
                             //do while loop for checking input error;
                             do
@@ -289,16 +290,16 @@ namespace DataStructuresAssignment
                                     Console.WriteLine();
 
                                     //This is for when user input wrong integer
-                                    if (menuChoice < 1 || menuChoice > 7)
+                                    if (menuChoice < 1 || menuChoice > 8)
                                     {
-                                        throw new Exception("You have to choose positive integer between 1 and 7. Try again!");
+                                        throw new Exception("You have to choose positive integer between 1 and 8. Try again!");
                                     }
                                 }
 
                                 //This is for when user input no integer such as alphabets
                                 catch (FormatException ex1)
                                 {
-                                    Console.WriteLine("You have to put positive integer between 1 and 7 not letters or characters. Try again!", ex1);
+                                    Console.WriteLine("You have to put positive integer between 1 and 8 not letters or characters. Try again!", ex1);
                                     inputError = true;
                                 }
                                 catch (Exception ex2)
@@ -453,8 +454,20 @@ namespace DataStructuresAssignment
 
                                         break;
                                     }
-                                //return main menu
-                                case 7:
+                                case 7: //Count
+                                        {
+                                            if (myQueue.Count() == 1) 
+                                            {
+                                                Console.WriteLine("There is 1 item in the Queue");
+                                            }
+                                            else 
+                                            {
+                                                Console.WriteLine("There are " + myQueue.Count() + " items in the Queue");
+                                            }
+                                            break;
+                                        }
+                                    //return main menu
+                                case 8:
                                     {
                                         returnMainMenu = true;
                                         break;
