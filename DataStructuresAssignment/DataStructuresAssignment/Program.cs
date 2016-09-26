@@ -481,7 +481,198 @@ namespace DataStructuresAssignment
 
                         break;
                     case 3:
-                        Console.WriteLine("Dictionary");
+                        Console.WriteLine("\nDictionary");
+                        //Jacob Peterson
+                        //9/26/16
+                        //create dictionary and instantiate variables
+
+                        Dictionary<String, int> myDictionary = new Dictionary<string, int>();
+
+
+                        //dowhile loop to until user enters 7 to return to main menu
+                        do
+                        {
+                            //Dictionary menu
+                            Console.WriteLine("1. Add one item to Dictionary");
+                            Console.WriteLine("2. Add Huge List of Items to Dictionary");
+                            Console.WriteLine("3. Display Dictionary");
+                            Console.WriteLine("4. Delete from Dictionary");
+                            Console.WriteLine("5. Clear Dictionary");
+                            Console.WriteLine("6. Search Dictionary");
+                            Console.WriteLine("7. Count items in Dictionary");
+                            Console.WriteLine("8. Return to Main Menu");
+                            Console.WriteLine();
+
+                            do
+                            {
+                                //put error back at false
+                                bError = false;
+
+                                //try/catch
+                                try
+                                {
+                                    //read input
+                                    userInput = Convert.ToInt32(Console.ReadLine());
+
+                                    //check for anything not 1 through 7
+                                    if (userInput < 1 || userInput > 7)
+                                    {
+                                        throw new Exception();
+                                    }
+                                }
+                                catch (Exception e)
+                                {
+                                    bError = true;
+                                    Console.WriteLine("\nPlease enter a positive integer between 1 and 7\n", e);
+                                }
+                            } while (bError == true);
+
+                            //swtich statement to decided which menu item was selected
+                            switch (userInput)
+                            {
+                                case 1: //add one item
+                                    //ask user to enter string
+                                    Console.Write("\nPlease enter a string to be inserted into the Dictionary: ");
+
+                                    //add to dict if not already there
+                                    try
+                                    {
+                                        //enter string into Dictionary. If it's already there it will throw an exeption
+                                        myDictionary.Add(Console.ReadLine(), 1);
+                                    }
+                                    catch
+                                    {
+                                        Console.WriteLine("It looks like that key is already in the Dictionary. You may add another by selecting '1'.");
+                                    }
+
+                                    break;
+                                case 2: //add huge list of items
+                                    //clear Dictionary
+                                    myDictionary.Clear();
+
+                                    //generate 2000 items with value of "New Entry" concatinated with entry number and add to Dictionary
+                                    for (int iCount = 0; iCount < 2000; iCount++)
+                                    {
+                                        myDictionary.Add("New Entry " + (iCount + 1),(iCount + 1));
+                                    }
+                                    break;
+                                case 3:  //display
+                                    //reset bError to false
+                                    try
+                                    {
+                                        //see if there is anything in the Dictionary
+                                        if (myDictionary.Count == 0)
+                                        {
+                                            throw new Exception();
+                                        }
+
+                                        Console.WriteLine("Key\tValue");
+                                        //use foreach loop to display content of Dictionary
+                                        foreach (KeyValuePair<String,int> entry in myDictionary)
+                                        {
+                                            Console.Write(entry.Key + "\t" + entry.Value + "\n");
+                                        }
+                                    }
+                                    catch
+                                    {
+                                        bError = true;
+                                        Console.WriteLine("\nThere is nothing in the Dictionary.  Please insert an item into the Dictionary before displaying contents.");
+                                    }
+                                    break;
+                                case 4: //delete from
+                                    do
+                                    {
+                                        //set bError to false
+                                        bError = false;
+
+                                        try
+                                        {
+                                            //see if anything is in the Dictionary to delete
+                                            if (myDictionary.Count() == 0)
+                                            {
+                                                throw new Exception();
+                                            }
+
+                                            //ask what user wants to delete
+                                            Console.Write("\nWhat item would you like to delete (input a key): ");
+                                            string sDelete = Console.ReadLine();
+
+                                            //see if item is in Dictionary
+                                            if (myDictionary.ContainsKey(sDelete))
+                                            {
+                                               //Delete the item
+                                                myDictionary.Remove(sDelete);
+
+                                                //tell user item was deleted
+                                                Console.WriteLine(sDelete + " and its value were deleted from the Dictionary!");
+                                            }
+                                            else
+                                            {
+                                                Console.Write("\n" + sDelete + " is not in the Dictionary. Do you want to try a different item: (y/n) ");
+                                                string sAnswer = Console.ReadLine();
+
+                                                if (sAnswer.Equals("y"))
+                                                {
+                                                    bError = true;
+                                                }
+                                                else
+                                                {
+                                                    bError = false;
+                                                }
+                                            }
+                                        }
+                                        catch (Exception e)
+                                        {
+                                            Console.WriteLine("\nThere is nothing in the Dictionary to delete");
+                                        }
+
+                                    } while (bError == true);
+                                    break;
+                                case 5: //clear
+                                    //clear myDictionary
+                                    myDictionary.Clear();
+                                    break;
+                                case 6: //search
+
+
+                                    //ask what user want to search for
+                                    Console.Write("What key do you want to search for?: ");
+                                    string sUserInput = Console.ReadLine();
+
+                                    //start stopwatch
+                                    sw.Start();
+
+                                    //search myDictionary
+                                    Boolean bContains = myDictionary.ContainsKey(sUserInput);
+
+                                    //stop stopwatch
+                                    sw.Stop();
+
+                                    //return whether or not it was found
+                                    if (bContains)
+                                    {
+                                        Console.WriteLine("\nThe item was found in the Dictionary. It's value is " + myDictionary[sUserInput]);
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("\nThe item was not found in the Dictionary.");
+                                    }
+
+                                    //return how long it took to search
+                                    Console.WriteLine("The search took " + (sw.ElapsedTicks * 100) + " nanoseconds.");
+
+                                    break;
+                                case 7: //count stuff
+                                    Console.WriteLine("The Dictionary contains " +  myDictionary.Count + " item(s).");
+                                    break;
+                                case 8: //return
+                                    bStop = true;
+                                    break;
+                            }
+                            //add blank line for readabilty when repeating menu
+                            Console.WriteLine();
+                        } while (bStop == false);
+
                         break;
                     case 4:
                         System.Environment.Exit(1);
