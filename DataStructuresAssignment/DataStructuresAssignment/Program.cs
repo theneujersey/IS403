@@ -38,13 +38,14 @@ namespace DataStructuresAssignment
             switch (iAnswer) {
                 case 1:
                     Console.WriteLine("Stack");
+                    Console.WriteLine();
                     //Eric Pickard
                     //9/27/16
                     //create stack and instantiate variables
                     Stack<string> myStack = new Stack<string>();
                     
 
-                    //dowhile loop to until user enters 7 to return to main menu
+                    //dowhile loop to until user enters 8 to return to main menu
                     do
                     {
                         //stack menu
@@ -54,7 +55,8 @@ namespace DataStructuresAssignment
                         Console.WriteLine("4. Delete from Stack");
                         Console.WriteLine("5. Clear Stack");
                         Console.WriteLine("6. Search Stack");
-                        Console.WriteLine("7. Return to Main Menu");
+                        Console.WriteLine("7. Count Items in Stack");
+                        Console.WriteLine("8. Return to Main Menu");
                         Console.WriteLine();
 
                         do
@@ -68,8 +70,8 @@ namespace DataStructuresAssignment
                                 //read input
                                 userInput = Convert.ToInt32(Console.ReadLine());
 
-                                //check for anything not 1 through 7
-                                if (userInput < 1 || userInput > 7)
+                                //check for anything not 1 through 8
+                                if (userInput < 1 || userInput > 8)
                                 {
                                     throw new Exception();
                                 }
@@ -77,7 +79,7 @@ namespace DataStructuresAssignment
                             catch (Exception e)
                             {
                                 bError = true;
-                                Console.WriteLine("\nPlease enter a positive integer between 1 and 7\n", e);
+                                Console.WriteLine("\nPlease enter a positive integer between 1 and 8\n", e);
                             }
                         } while (bError == true);
 
@@ -166,9 +168,12 @@ namespace DataStructuresAssignment
 
                                             //pop off item user requested to be deleted
                                             myStack.Pop();
+                                            
+                                            //create variable for tempStack count
+                                            int iTempStackCount = tempStack.Count();
 
                                             //add back items in tempStack to myStack
-                                            for (int iCount = 0; iCount < tempStack.Count(); iCount++)
+                                            for (int iCount = 0; iCount < iTempStackCount; iCount++)
                                             {
                                                 myStack.Push(tempStack.Pop());
                                             }
@@ -232,7 +237,19 @@ namespace DataStructuresAssignment
                                 Console.WriteLine("The search took " + (sw.ElapsedTicks * 100) + " nanoseconds.");
 
                                 break;
-                            case 7: //return
+                            case 7: //Count
+                                //write count of stack to screen
+                                if (myStack.Count() == 1)
+                                {
+                                    Console.WriteLine("There is 1 item in the stack");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("There are" + myStack.Count() + " items in the stack");
+                                }
+                                
+                                break;
+                            case 8: //return
                                 bStop = true;
                                 break;
                         }
