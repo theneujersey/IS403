@@ -528,7 +528,7 @@ namespace DataStructuresAssignment
                                     userInput = Convert.ToInt32(Console.ReadLine());
 
                                     //check for anything not 1 through 7
-                                    if (userInput < 1 || userInput > 7)
+                                    if (userInput < 1 || userInput > 8)
                                     {
                                         throw new Exception();
                                     }
@@ -536,7 +536,7 @@ namespace DataStructuresAssignment
                                 catch (Exception e)
                                 {
                                     bError = true;
-                                    Console.WriteLine("\nPlease enter a positive integer between 1 and 7\n", e);
+                                    Console.WriteLine("\nPlease enter a positive integer between 1 and 8\n", e);
                                 }
                             } while (bError == true);
 
