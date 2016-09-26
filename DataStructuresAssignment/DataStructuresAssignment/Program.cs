@@ -341,7 +341,7 @@ namespace DataStructuresAssignment
                                         {
                                             myQueue.Enqueue("New Entry " + listCount);
                                         }
-                                        Console.WriteLine("Huge list of itemsa are successfully added in Queue.");
+                                        Console.WriteLine("Huge list of items are successfully added in Queue.");
                                         break;
                                     }
                                 //display Queue
@@ -555,6 +555,7 @@ namespace DataStructuresAssignment
                                     {
                                         myDictionary.Add("New Entry " + (iCount + 1),(iCount + 1));
                                     }
+                                     Console.WriteLine("Huge list of items successfully added to Dictionary!");
                                     break;
                                 case 3:  //display
                                     //reset bError to false
