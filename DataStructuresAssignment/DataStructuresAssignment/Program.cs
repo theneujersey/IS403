@@ -73,6 +73,7 @@ namespace DataStructuresAssignment
                         //dowhile loop to until user enters 8 to return to main menu
                         do
                         {
+                            bStop = false;
                             //stack menu
                             Console.WriteLine("1. Add one item to Stack");
                             Console.WriteLine("2. Add Huge List of Items to Stack");
@@ -529,6 +530,7 @@ namespace DataStructuresAssignment
                         //dowhile loop to until user enters 7 to return to main menu
                         do
                         {
+                            bStop = false;
                             //Dictionary menu
                             Console.WriteLine("1. Add one item to Dictionary");
                             Console.WriteLine("2. Add Huge List of Items to Dictionary");
