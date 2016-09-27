@@ -8,8 +8,21 @@ namespace DataStructuresAssignment
 {
     class Program
     {
+        /* Group 2-1: Wooseok Lee, Johnathan Neu, Eric Pickard, Jacob Peterson
+         * Professor G. Anderson, IS 403
+         * 9/26/16
+         * 
+         * This program display a menu with four options to the user, stack, queue, dictionary, and exit.
+         * For the three data structures, a user may (1) add a single item of the user's choice, (2) add
+         * 2000 generically named items (after clearing the structure), (3) display the contents of the
+         * structure, (4) delete a specific item from the structure, (5) clear the entire structure, (6) 
+         * search the structure for a specific item, (7) count the number of items in the structure, or
+         * (8) exit to the main menu.
+         * */
+        
         static void Main(string[] args)
         {
+            
             //create stopwatch called sw
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             int iAnswer = 0;
@@ -17,13 +30,19 @@ namespace DataStructuresAssignment
             Boolean bError = false;
             Boolean bStop = false;
 
+            //allows return to main menu after exiting sub menu
             while (iAnswer != 4)
             {
+                
+                //allows menu to be seen once and then forces user input to be an integer 1-4
                 do
                 {
-                    Console.WriteLine("Please enter an integer 1-4.");
-                    Console.WriteLine("1. Stack\n2. Queue\n3. Dictionary\n4. Exit");
+                    
+                    //displays menu
+                    Console.WriteLine("\nPlease enter an integer 1-4.");
+                    Console.WriteLine("1. Stack\n2. Queue\n3. Dictionary\n4. Exit\n");
 
+                    //exception handling in case user inputs string instead of int
                     Boolean bException = false;
                     while (bException == false)
                     {
@@ -35,8 +54,8 @@ namespace DataStructuresAssignment
                         }
                         catch
                         {
-                            Console.WriteLine("Please enter an integer 1-4.");
-                            Console.WriteLine("1. Stack\n2. Queue\n3. Dictionary\n4. Exit");
+                            Console.WriteLine("\nPlease enter an integer 1-4.");
+                            Console.WriteLine("1. Stack\n2. Queue\n3. Dictionary\n4. Exit\n");
                         }
                     }
                 } while (iAnswer < 1 || iAnswer > 4);
@@ -44,13 +63,12 @@ namespace DataStructuresAssignment
                 switch (iAnswer)
                 {
                     case 1:
-                        Console.WriteLine("Stack");
-                        Console.WriteLine();
+                        Console.WriteLine("\nStack");
+                        
                         //Eric Pickard
                         //9/27/16
                         //create stack and instantiate variables
                         Stack<string> myStack = new Stack<string>();
-
 
                         //dowhile loop to until user enters 8 to return to main menu
                         do
@@ -71,7 +89,7 @@ namespace DataStructuresAssignment
                                 //put error back at false
                                 bError = false;
 
-                                //try/catch
+                                //try, catch
                                 try
                                 {
                                     //read input
@@ -86,7 +104,7 @@ namespace DataStructuresAssignment
                                 catch (Exception e)
                                 {
                                     bError = true;
-                                    Console.WriteLine("\nPlease enter a positive integer between 1 and 8\n", e);
+                                    Console.WriteLine("\nPlease enter a positive integer between 1 and 8.\n", e);
                                 }
                             } while (bError == true);
 
@@ -95,10 +113,13 @@ namespace DataStructuresAssignment
                             {
                                 case 1: //add one item
                                     //ask user to enter string
-                                    Console.Write("\nPlease enter a string to be inserted into the stack: ");
+                                    Console.WriteLine("\nPlease enter a string to be inserted into the stack: ");
 
                                     //enter string into stack
                                     myStack.Push(Console.ReadLine());
+
+                                    //tell the user it was added
+                                    Console.WriteLine("\nThe item was added!");
                                     break;
                                 case 2: //add huge list of items
                                     //clear stack
@@ -112,7 +133,6 @@ namespace DataStructuresAssignment
                                     
                                     //tell the user it worked
                                     Console.WriteLine("\nThe huge list was added!");
-
                                     break;
                                 case 3:  //display
                                     //reset bError to false
@@ -151,7 +171,7 @@ namespace DataStructuresAssignment
                                             }
 
                                             //ask what user wants to delete
-                                            Console.Write("\nWhat item would you like to delete: ");
+                                            Console.WriteLine("\nWhat item would you like to delete?: ");
                                             string sDelete = Console.ReadLine();
 
                                             //see if item is in stack
@@ -194,7 +214,7 @@ namespace DataStructuresAssignment
                                             }
                                             else
                                             {
-                                                Console.Write("\n" + sDelete + " is not in the stack. Do you want to try a different item: (y/n) ");
+                                                Console.WriteLine("\n" + sDelete + " is not in the stack. Do you want to try a different item?: (y/n) ");
                                                 string sAnswer = Console.ReadLine();
 
                                                 if (sAnswer.Equals("y"))
@@ -209,7 +229,7 @@ namespace DataStructuresAssignment
                                         }
                                         catch (Exception e)
                                         {
-                                            Console.WriteLine("\nThere is nothing in the stack to delete");
+                                            Console.WriteLine("\nThere is nothing in the stack to delete.");
                                         }
 
                                     } while (bError == true);
@@ -226,7 +246,7 @@ namespace DataStructuresAssignment
 
 
                                     //ask what user want to search for
-                                    Console.Write("What do you want to search for?: ");
+                                    Console.WriteLine("\nWhat do you want to search for?: ");
                                     string sUserInput = Console.ReadLine();
 
                                     //start stopwatch
@@ -256,11 +276,11 @@ namespace DataStructuresAssignment
                                     //write count of stack to screen
                                     if (myStack.Count() == 1)
                                     {
-                                        Console.WriteLine("There is 1 item in the stack");
+                                        Console.WriteLine("\nThere is 1 item in the stack");
                                     }
                                     else
                                     {
-                                        Console.WriteLine("There are " + myStack.Count() + " items in the stack");
+                                        Console.WriteLine("\nThere are " + myStack.Count() + " items in the stack");
                                     }
 
                                     break;
@@ -274,7 +294,8 @@ namespace DataStructuresAssignment
 
                         break;
                     case 2:
-                        Console.WriteLine("Queue");
+                        Console.WriteLine("\nQueue");
+                        
                         //Wooseok Lee, 2-1, create Queue menu.
                         Queue<string> myQueue = new Queue<string>();
 
@@ -294,6 +315,7 @@ namespace DataStructuresAssignment
                             Console.WriteLine("6. Search Queue");
                             Console.WriteLine("7. Count Items in Queue");
                             Console.WriteLine("8. Return to Main Menu");
+                            Console.WriteLine();
 
                             //do while loop for checking input error;
                             do
@@ -307,14 +329,14 @@ namespace DataStructuresAssignment
                                     //This is for when user input wrong integer
                                     if (menuChoice < 1 || menuChoice > 8)
                                     {
-                                        throw new Exception("You have to choose positive integer between 1 and 8. Try again!");
+                                        throw new Exception("You have to choose a positive integer between 1 and 8. Try again!");
                                     }
                                 }
 
                                 //This is for when user input no integer such as alphabets
                                 catch (FormatException ex1)
                                 {
-                                    Console.WriteLine("You have to put positive integer between 1 and 8 not letters or characters. Try again!", ex1);
+                                    Console.WriteLine("You have to choose a positive integer between 1 and 8, not letters or characters. Try again!", ex1);
                                     inputError = true;
                                 }
                                 catch (Exception ex2)
@@ -330,8 +352,9 @@ namespace DataStructuresAssignment
                                 //add one item in Queue
                                 case 1:
                                     {
-                                        Console.Write("Enter a string that you want to add: ");
+                                        Console.WriteLine("Enter a string that you want to add: ");
                                         myQueue.Enqueue(Console.ReadLine());
+                                        Console.WriteLine("\nThe item was added!\n");
                                         break;
                                     }
                                 //add huge list of items in Queue
@@ -342,7 +365,7 @@ namespace DataStructuresAssignment
                                         {
                                             myQueue.Enqueue("New Entry " + listCount);
                                         }
-                                        Console.WriteLine("Huge list of items are successfully added in Queue.");
+                                        Console.WriteLine("A huge list of items was successfully added to the queue.\n");
                                         break;
                                     }
                                 //display Queue
@@ -353,7 +376,7 @@ namespace DataStructuresAssignment
                                             //This is for when nothing is in Queue
                                             if (myQueue.Count == 0)
                                             {
-                                                throw new Exception("There is nothing to display in Queue.");
+                                                throw new Exception("There is nothing to display in the queue.\n");
                                             }
                                             else
                                             {
@@ -362,6 +385,7 @@ namespace DataStructuresAssignment
                                                 {
                                                     Console.WriteLine(mylist);
                                                 }
+                                                Console.WriteLine();
                                             }
                                         }
                                         catch (Exception ex3)
@@ -377,12 +401,12 @@ namespace DataStructuresAssignment
                                     {
                                         if (myQueue.Count == 0)
                                         {
-                                            Console.WriteLine("There is nothing to delete in Queue");
+                                            Console.WriteLine("There is nothing to delete in the queue.\n");
                                         }
 
                                         else
                                         {
-                                            Console.Write("What do you want to delete from Queue?: ");
+                                            Console.WriteLine("What do you want to delete from the queue?: ");
                                             deleteInput = Console.ReadLine();
 
                                             try
@@ -390,13 +414,13 @@ namespace DataStructuresAssignment
                                                 //This is for when nothing is in Queue
                                                 if (myQueue.Count == 0)
                                                 {
-                                                    throw new Exception("There is nothing to delete in Queue.");
+                                                    throw new Exception("\nThere is nothing to delete in the queue.\n");
                                                 }
 
                                                 //check whether item is in Queue
                                                 else if (!myQueue.Contains(deleteInput))
                                                 {
-                                                    throw new Exception("There is no such item in Queue.");
+                                                    throw new Exception("\nThere is no such item in the queue.\n");
                                                 }
                                                 else
                                                 {
@@ -410,7 +434,7 @@ namespace DataStructuresAssignment
                                                         if (myQueue.Peek() == deleteInput)
                                                         {
                                                             myQueue.Dequeue();
-                                                            Console.WriteLine(deleteInput + " was succesfully deleted.");
+                                                            Console.WriteLine("\n" + deleteInput + " was succesfully deleted.\n");
                                                             //to stop while loop
                                                             bDelete = true;
                                                         }
@@ -442,13 +466,13 @@ namespace DataStructuresAssignment
                                 case 5:
                                     {
                                         myQueue.Clear();
-                                        Console.WriteLine("Queue is successfully cleared!");
+                                        Console.WriteLine("The queue was successfully cleared!\n");
                                         break;
                                     }
                                 //search Queue
                                 case 6:
                                     {
-                                        Console.Write("What do you want to search from Queue?: ");
+                                        Console.WriteLine("What do you want to search from the queue?: ");
                                         searchInput = Console.ReadLine();
 
                                         //start stopwatch
@@ -459,13 +483,13 @@ namespace DataStructuresAssignment
                                         {
                                             //stop stopwatch
                                             sw.Stop();
-                                            Console.WriteLine(searchInput + " was found. And it took " + sw.Elapsed + " to search.");
+                                            Console.WriteLine("\n" + searchInput + " was found and it took " + sw.Elapsed + " to search.\n");
                                         }
                                         else
                                         {
                                             //stop stopwatch
                                             sw.Stop();
-                                            Console.WriteLine(searchInput + " was not found. And it took " + sw.Elapsed + " to search.");
+                                            Console.WriteLine("\n" + searchInput + " was not found and it took " + sw.Elapsed + " to search.\n");
                                         }
 
                                         break;
@@ -474,11 +498,11 @@ namespace DataStructuresAssignment
                                         {
                                             if (myQueue.Count() == 1) 
                                             {
-                                                Console.WriteLine("There is 1 item in the Queue");
+                                                Console.WriteLine("There is 1 item in the queue.\n");
                                             }
                                             else 
                                             {
-                                                Console.WriteLine("There are " + myQueue.Count() + " items in the Queue");
+                                                Console.WriteLine("There are " + myQueue.Count() + " items in the queue.\n");
                                             }
                                             break;
                                         }
@@ -489,12 +513,12 @@ namespace DataStructuresAssignment
                                         break;
                                     }
                             }
-                            Console.WriteLine();
                         } while (returnMainMenu == false);
 
                         break;
                     case 3:
                         Console.WriteLine("\nDictionary");
+                        
                         //Jacob Peterson
                         //9/26/16
                         //create dictionary and instantiate variables
@@ -536,7 +560,7 @@ namespace DataStructuresAssignment
                                 catch (Exception e)
                                 {
                                     bError = true;
-                                    Console.WriteLine("\nPlease enter a positive integer between 1 and 8\n", e);
+                                    Console.WriteLine("\nPlease enter a positive integer between 1 and 8.\n", e);
                                 }
                             } while (bError == true);
 
@@ -545,17 +569,19 @@ namespace DataStructuresAssignment
                             {
                                 case 1: //add one item
                                     //ask user to enter string
-                                    Console.Write("\nPlease enter a string to be inserted into the Dictionary: ");
+                                    Console.WriteLine("\nPlease enter a string to be inserted into the dictionary: ");
 
                                     //add to dict if not already there
                                     try
                                     {
                                         //enter string into Dictionary. If it's already there it will throw an exeption
                                         myDictionary.Add(Console.ReadLine(), 1);
+                                        Console.WriteLine("\nThe item was added!");
+
                                     }
                                     catch
                                     {
-                                        Console.WriteLine("It looks like that key is already in the Dictionary. You may add another by selecting '1'.");
+                                        Console.WriteLine("It looks like that key is already in the dictionary. You may add another by selecting '1'.");
                                     }
 
                                     break;
@@ -568,7 +594,7 @@ namespace DataStructuresAssignment
                                     {
                                         myDictionary.Add("New Entry " + (iCount + 1),(iCount + 1));
                                     }
-                                     Console.WriteLine("Huge list of items successfully added to Dictionary!");
+                                     Console.WriteLine("\nHuge list of items successfully added to dictionary!");
                                     break;
                                 case 3:  //display
                                     //reset bError to false
@@ -584,13 +610,13 @@ namespace DataStructuresAssignment
                                         //use foreach loop to display content of Dictionary
                                         foreach (KeyValuePair<String,int> entry in myDictionary)
                                         {
-                                            Console.Write(entry.Key + "\t" + entry.Value + "\n");
+                                            Console.WriteLine(entry.Key + "\t" + entry.Value);
                                         }
                                     }
                                     catch
                                     {
                                         bError = true;
-                                        Console.WriteLine("\nThere is nothing in the Dictionary.  Please insert an item into the Dictionary before displaying contents.");
+                                        Console.WriteLine("\nThere is nothing in the dictionary.  Please insert an item into the dictionary before displaying contents.");
                                     }
                                     break;
                                 case 4: //delete from
@@ -608,7 +634,7 @@ namespace DataStructuresAssignment
                                             }
 
                                             //ask what user wants to delete
-                                            Console.Write("\nWhat item would you like to delete (input a key): ");
+                                            Console.WriteLine("\nWhat item would you like to delete (input a key): ");
                                             string sDelete = Console.ReadLine();
 
                                             //see if item is in Dictionary
@@ -618,11 +644,11 @@ namespace DataStructuresAssignment
                                                 myDictionary.Remove(sDelete);
 
                                                 //tell user item was deleted
-                                                Console.WriteLine(sDelete + " and its value were deleted from the Dictionary!");
+                                                Console.WriteLine("\n" + sDelete + " and its value were deleted from the dictionary!");
                                             }
                                             else
                                             {
-                                                Console.Write("\n" + sDelete + " is not in the Dictionary. Do you want to try a different item: (y/n) ");
+                                                Console.WriteLine("\n" + sDelete + " is not in the dictionary. Do you want to try a different item: (y/n) ");
                                                 string sAnswer = Console.ReadLine();
 
                                                 if (sAnswer.Equals("y"))
@@ -637,7 +663,7 @@ namespace DataStructuresAssignment
                                         }
                                         catch (Exception e)
                                         {
-                                            Console.WriteLine("\nThere is nothing in the Dictionary to delete");
+                                            Console.WriteLine("\nThere is nothing in the dictionary to delete");
                                         }
 
                                     } while (bError == true);
@@ -645,12 +671,13 @@ namespace DataStructuresAssignment
                                 case 5: //clear
                                     //clear myDictionary
                                     myDictionary.Clear();
+                                    Console.WriteLine("\nThe dictionary was cleared!");
                                     break;
                                 case 6: //search
 
 
                                     //ask what user want to search for
-                                    Console.Write("What key do you want to search for?: ");
+                                    Console.WriteLine("\nWhat key do you want to search for?: ");
                                     string sUserInput = Console.ReadLine();
 
                                     //start stopwatch
@@ -665,11 +692,11 @@ namespace DataStructuresAssignment
                                     //return whether or not it was found
                                     if (bContains)
                                     {
-                                        Console.WriteLine("\nThe item was found in the Dictionary. It's value is " + myDictionary[sUserInput]);
+                                        Console.WriteLine("\nThe item was found in the dictionary. It's value is " + myDictionary[sUserInput]);
                                     }
                                     else
                                     {
-                                        Console.WriteLine("\nThe item was not found in the Dictionary.");
+                                        Console.WriteLine("\nThe item was not found in the dictionary.");
                                     }
 
                                     //return how long it took to search
@@ -677,7 +704,7 @@ namespace DataStructuresAssignment
 
                                     break;
                                 case 7: //count stuff
-                                    Console.WriteLine("The Dictionary contains " +  myDictionary.Count + " item(s).");
+                                    Console.WriteLine("\nThe dictionary contains " +  myDictionary.Count + " item(s).");
                                     break;
                                 case 8: //return
                                     bStop = true;
