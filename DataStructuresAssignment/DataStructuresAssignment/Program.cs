@@ -214,7 +214,7 @@ namespace DataStructuresAssignment
                                             }
                                             else
                                             {
-                                                Console.WriteLine("\n" + sDelete + " is not in the stack. Do you want to try a different item?: (y/n) ");
+                                                Console.WriteLine("\n" + sDelete + " is not in the stack. If you would like to try again, type 'y' and hit Enter.  Otherwise, hit enter:  ");
                                                 string sAnswer = Console.ReadLine();
 
                                                 if (sAnswer.Equals("y"))
@@ -648,7 +648,7 @@ namespace DataStructuresAssignment
                                             }
                                             else
                                             {
-                                                Console.WriteLine("\n" + sDelete + " is not in the dictionary. Do you want to try a different item: (y/n) ");
+                                                Console.WriteLine("\n" + sDelete + " is not in the dictionary. If you would like to try again, type 'y' and hit Enter.  Otherwise, hit enter:  ");
                                                 string sAnswer = Console.ReadLine();
 
                                                 if (sAnswer.Equals("y"))
