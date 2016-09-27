@@ -25,6 +25,10 @@ namespace DataStructuresAssignment
             
             //create stopwatch called sw
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            
+            //Johnny Neu, main menu and general functionality creator, editor
+
+            //creates variables required for program flow
             int iAnswer = 0;
             int userInput = 0;
             Boolean bError = false;
@@ -60,13 +64,14 @@ namespace DataStructuresAssignment
                     }
                 } while (iAnswer < 1 || iAnswer > 4);
 
+                //switch statement for main menu
                 switch (iAnswer)
                 {
                     case 1:
                         Console.WriteLine("\nStack");
                         
                         //Eric Pickard
-                        //9/27/16
+                        //9/26/16
                         //create stack and instantiate variables
                         Stack<string> myStack = new Stack<string>();
 
@@ -112,6 +117,7 @@ namespace DataStructuresAssignment
                             switch (userInput)
                             {
                                 case 1: //add one item
+                                    
                                     //ask user to enter string
                                     Console.WriteLine("\nPlease enter a string to be inserted into the stack: ");
 
@@ -122,6 +128,7 @@ namespace DataStructuresAssignment
                                     Console.WriteLine("\nThe item was added!");
                                     break;
                                 case 2: //add huge list of items
+                                    
                                     //clear stack
                                     myStack.Clear();
 
@@ -164,6 +171,7 @@ namespace DataStructuresAssignment
 
                                         try
                                         {
+                                            
                                             //see if anything is in the stack to delete
                                             if (myStack.Count() == 0)
                                             {
@@ -177,6 +185,7 @@ namespace DataStructuresAssignment
                                             //see if item is in stack
                                             if (myStack.Contains(sDelete))
                                             {
+                                                
                                                 //create bFound for dowhile loop
                                                 Boolean bFound = false;
 
@@ -186,6 +195,7 @@ namespace DataStructuresAssignment
                                                 //loop to see if the top of the stack is the item that needs to be deleted
                                                 do
                                                 {
+                                                    
                                                     //check to see if top of stack is item to be deleted
                                                     if (myStack.Peek().Equals(sDelete))
                                                     {
@@ -235,6 +245,7 @@ namespace DataStructuresAssignment
                                     } while (bError == true);
                                     break;
                                 case 5: //clear
+                                    
                                     //clear myStack
                                     myStack.Clear();
                                     
@@ -243,7 +254,6 @@ namespace DataStructuresAssignment
                            
                                     break;
                                 case 6: //search
-
 
                                     //ask what user want to search for
                                     Console.WriteLine("\nWhat do you want to search for?: ");
@@ -273,6 +283,7 @@ namespace DataStructuresAssignment
 
                                     break;
                                 case 7: //Count
+                                    
                                     //write count of stack to screen
                                     if (myStack.Count() == 1)
                                     {
@@ -288,6 +299,7 @@ namespace DataStructuresAssignment
                                     bStop = true;
                                     break;
                             }
+                            
                             //add blank line for readabilty when repeating menu
                             Console.WriteLine();
                         } while (bStop == false);
@@ -297,8 +309,9 @@ namespace DataStructuresAssignment
                         Console.WriteLine("\nQueue");
                         
                         //Wooseok Lee, 2-1, create Queue menu.
-                        Queue<string> myQueue = new Queue<string>();
 
+                        //creates data structures
+                        Queue<string> myQueue = new Queue<string>();
                         int menuChoice = 0; bool inputError; string deleteInput;
                         string searchInput; bool returnMainMenu; bool bDelete; string firstItem;
 
@@ -349,6 +362,7 @@ namespace DataStructuresAssignment
                             //switch is used to select menu
                             switch (menuChoice)
                             {
+                                
                                 //add one item in Queue
                                 case 1:
                                     {
@@ -357,6 +371,7 @@ namespace DataStructuresAssignment
                                         Console.WriteLine("\nThe item was added!\n");
                                         break;
                                     }
+                                
                                 //add huge list of items in Queue
                                 case 2:
                                     {
@@ -368,11 +383,13 @@ namespace DataStructuresAssignment
                                         Console.WriteLine("A huge list of items was successfully added to the queue.\n");
                                         break;
                                     }
+                                
                                 //display Queue
                                 case 3:
                                     {
                                         try
                                         {
+                                            
                                             //This is for when nothing is in Queue
                                             if (myQueue.Count == 0)
                                             {
@@ -380,6 +397,7 @@ namespace DataStructuresAssignment
                                             }
                                             else
                                             {
+                                                
                                                 //foreach loop is used to display Queue
                                                 foreach (var mylist in myQueue)
                                                 {
@@ -391,7 +409,6 @@ namespace DataStructuresAssignment
                                         catch (Exception ex3)
                                         {
                                             Console.WriteLine(ex3.Message);
-
                                         }
                                         break;
                                     }
@@ -425,16 +442,20 @@ namespace DataStructuresAssignment
                                                 else
                                                 {
                                                     bDelete = false;
+                                                    
                                                     //firstItem representing the top of Queue before deleting
                                                     firstItem = myQueue.Peek();
+                                                    
                                                     //while loop is continued until deleting item from the top of Queue
                                                     while (bDelete == false)
                                                     {
+                                                        
                                                         //when found out the right item from the top of Queue
                                                         if (myQueue.Peek() == deleteInput)
                                                         {
                                                             myQueue.Dequeue();
                                                             Console.WriteLine("\n" + deleteInput + " was succesfully deleted.\n");
+                                                            
                                                             //to stop while loop
                                                             bDelete = true;
                                                         }
@@ -444,19 +465,17 @@ namespace DataStructuresAssignment
                                                             myQueue.Enqueue(myQueue.Dequeue());
                                                         }
                                                     }
+                                                    
                                                     //This is for correcting order after deleting the item.
                                                     while (myQueue.Peek() != firstItem && deleteInput != firstItem)
                                                     {
                                                         myQueue.Enqueue(myQueue.Dequeue());
                                                     }
-
-
                                                 }
                                             }
                                             catch (Exception ex5)
                                             {
                                                 Console.WriteLine(ex5.Message);
-
                                             }
                                         }
                                         break;
@@ -469,6 +488,7 @@ namespace DataStructuresAssignment
                                         Console.WriteLine("The queue was successfully cleared!\n");
                                         break;
                                     }
+                                
                                 //search Queue
                                 case 6:
                                     {
@@ -525,10 +545,10 @@ namespace DataStructuresAssignment
 
                         Dictionary<String, int> myDictionary = new Dictionary<string, int>();
 
-
                         //dowhile loop to until user enters 7 to return to main menu
                         do
                         {
+                            
                             //Dictionary menu
                             Console.WriteLine("1. Add one item to Dictionary");
                             Console.WriteLine("2. Add Huge List of Items to Dictionary");
@@ -542,12 +562,14 @@ namespace DataStructuresAssignment
 
                             do
                             {
+                                
                                 //put error back at false
                                 bError = false;
 
                                 //try/catch
                                 try
                                 {
+                                    
                                     //read input
                                     userInput = Convert.ToInt32(Console.ReadLine());
 
@@ -568,16 +590,17 @@ namespace DataStructuresAssignment
                             switch (userInput)
                             {
                                 case 1: //add one item
+                                    
                                     //ask user to enter string
                                     Console.WriteLine("\nPlease enter a string to be inserted into the dictionary: ");
 
                                     //add to dict if not already there
                                     try
                                     {
+                                        
                                         //enter string into Dictionary. If it's already there it will throw an exeption
                                         myDictionary.Add(Console.ReadLine(), 1);
                                         Console.WriteLine("\nThe item was added!");
-
                                     }
                                     catch
                                     {
@@ -586,6 +609,7 @@ namespace DataStructuresAssignment
 
                                     break;
                                 case 2: //add huge list of items
+                                    
                                     //clear Dictionary
                                     myDictionary.Clear();
 
@@ -597,9 +621,11 @@ namespace DataStructuresAssignment
                                      Console.WriteLine("\nHuge list of items successfully added to dictionary!");
                                     break;
                                 case 3:  //display
+                                    
                                     //reset bError to false
                                     try
                                     {
+                                        
                                         //see if there is anything in the Dictionary
                                         if (myDictionary.Count == 0)
                                         {
@@ -607,6 +633,7 @@ namespace DataStructuresAssignment
                                         }
 
                                         Console.WriteLine("Key\tValue");
+                                        
                                         //use foreach loop to display content of Dictionary
                                         foreach (KeyValuePair<String,int> entry in myDictionary)
                                         {
@@ -622,11 +649,13 @@ namespace DataStructuresAssignment
                                 case 4: //delete from
                                     do
                                     {
+                                        
                                         //set bError to false
                                         bError = false;
 
                                         try
                                         {
+                                            
                                             //see if anything is in the Dictionary to delete
                                             if (myDictionary.Count() == 0)
                                             {
@@ -640,7 +669,8 @@ namespace DataStructuresAssignment
                                             //see if item is in Dictionary
                                             if (myDictionary.ContainsKey(sDelete))
                                             {
-                                               //Delete the item
+                                               
+                                                //Delete the item
                                                 myDictionary.Remove(sDelete);
 
                                                 //tell user item was deleted
@@ -669,12 +699,12 @@ namespace DataStructuresAssignment
                                     } while (bError == true);
                                     break;
                                 case 5: //clear
+
                                     //clear myDictionary
                                     myDictionary.Clear();
                                     Console.WriteLine("\nThe dictionary was cleared!");
                                     break;
                                 case 6: //search
-
 
                                     //ask what user want to search for
                                     Console.WriteLine("\nWhat key do you want to search for?: ");
@@ -710,6 +740,7 @@ namespace DataStructuresAssignment
                                     bStop = true;
                                     break;
                             }
+
                             //add blank line for readabilty when repeating menu
                             Console.WriteLine();
                         } while (bStop == false);
