@@ -1,0 +1,27 @@
+﻿body {
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
+.text-muted{
+    font-size: 22.5px;
+}
+
+.bannerImage{
+    width: 465px;
+}
+
+.browseImage{
+    width: 360px;
+    margin-bottom: 15px;
+}
+
+.myFooterText{
+    font-family: 'Roboto', sans-serif;
+}
+
+.list-group{
+    width: 60px;
+}

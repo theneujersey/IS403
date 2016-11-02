@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Blow Out!";
+}
+<link href="~/Content/myStyle.css" rel="stylesheet" />
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="bannerImage" src="~/Content/Images/banner.jpg" />
+        </div>
+        <div class="col-md-6">
+            <h1>BlowOut Musical Instrument Rentals</h1>
+            <p class="lead">Find your perfect new or used instrument rental here. We blow our competitors out of the water.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Rent to Own</h2>
+        <p class="text-muted">Not sure if you should rent or buy? Now, you can rent to own! Start off renting and every payment will go towards buying your instrument. It's yours after just 18 months!</p>
+        <img class="browseImage img-rounded" src="~/Content/Images/RentToOwn.jpg" />
+        <p><a class="btn btn-default" href="@Url.Action("About", "Home")">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Browse All Instruments</h2>
+        <img class="browseImage img-rounded" src="~/Content/Images/browse.jpg" />
+        <p><a class="btn btn-default" href="@Url.Action("Rentals", "Rental")">Browse Now &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Advice from Bach</h2>
+        <img class="browseImage img-rounded" src="~/Content/Images/quote.jpg" />    
+    </div>
+</div>

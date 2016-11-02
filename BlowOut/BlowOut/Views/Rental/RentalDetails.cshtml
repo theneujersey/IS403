@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "RentalDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RentalDetails</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <br />
+        <img class="img-rounded" src="~/Content/Images/@ViewBag.image" />
+    </div>
+    <div class="col-md-8">
+        <h2>@ViewBag.instrument</h2>
+        <p>@ViewBag.price</p>
+        <div class="list-group">
+            <a href="@Url.Action("RentalDetails", "Rental", new { instrument = @ViewBag.instrument, condition = "new" }, null)" class="list-group-item list-group-item-action">
+                New
+            </a>
+            <a href="@Url.Action("RentalDetails", "Rental", new { instrument = @ViewBag.instrument, condition = "used" }, null)" class="list-group-item list-group-item-action">
+                Used
+            </a>
+        </div>
+        <p><em>Note: See the "About" page for details about BlowOut's Rent to Own policy.</em></p>
+    </div>
+</div>

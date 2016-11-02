@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Rentals";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>BlowOut Musical Instrument Rentals</h1>
+    <p class="lead">Browse our selection of new and used instruments.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Trumpet</h2>
+        <p><a href="@Url.Action("RentalDetails", "Rental", new { instrument = "Trumpet", condition = "new" }, null)"><img class="img-rounded" src="~/Content/Images/trumpet.jpg" /></a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Trombone</h2>
+        <p><a href="@Url.Action("RentalDetails", "Rental", new { instrument = "Trombone", condition = "new" }, null)"><img class="img-rounded" src="~/Content/Images/trombone.jpg" /></a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Tuba</h2>
+        <p><a href="@Url.Action("RentalDetails", "Rental", new { instrument = "Tuba", condition = "new" }, null)"><img class="img-rounded" src="~/Content/Images/tuba.jpg" /></a></p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Flute</h2>
+        <p><a href="@Url.Action("RentalDetails", "Rental", new { instrument = "Flute", condition = "new" }, null)"><img class="img-rounded" src="~/Content/Images/flute.jpg" /></a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Clarinet</h2>
+        <p><a href="@Url.Action("RentalDetails", "Rental", new { instrument = "Clarinet", condition = "new" }, null)"><img class="img-rounded" src="~/Content/Images/clarinet.jpg" /></a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Saxophone</h2>
+        <p><a href="@Url.Action("RentalDetails", "Rental", new { instrument = "Saxophone", condition = "new" }, null)"><img class="img-rounded" src="~/Content/Images/saxophone.jpg" /></a></p>
+    </div>
+</div>
